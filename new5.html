@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nutrition Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: black;
+      color: red;
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .section {
+      padding: 40px;
+      margin: 0;
+      display: none;
+      text-align: left;
+    }
+
+    .subsection {
+      margin-top: 40px;
+    }
+
+    #join-program {
+      background-color: #ffcc00;
+      color: #333;
+    }
+
+    #nutrition-guide {
+      background-color: #66ccff;
+      color: white;
+    }
+
+    #experience {
+      background-color: #ff6699;
+      color: white;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .sidebar-button {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .sidebar-button:hover {
+      background-color: #eaeaea;
+    }
+
+    .sidebar-button:focus {
+      outline: none;
+    }
+
+    .gym-pictures {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .gym-pictures img {
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Nutrition Web Page</h1>
+
+  <div class="sidebar">
+    <button class="sidebar-button" onclick="showSection('join-program')"></button>
+    <button class="sidebar-button" onclick="showSection('nutrition-guide')"></button>
+    <button class="sidebar-button" onclick="showSection('experience')"></button>
+  </div>
+
+  <div id="join-program" class="section">
+    <h2>Join Program</h2>
+    <div class="subsection">
+      <h3>Program Overview</h3>
+      <p>
+        Our program offers personalized nutrition plans tailored to your specific
+        goals and needs. Whether you want to lose weight, gain muscle, or simply
+        improve your overall health, our experienced nutritionists are here to
+        guide you.
+      </p>
+    </div>
+    <div class="subsection">
+      <h3>Enrollment</h3>
+      <p>
+        To join our program, simply fill out the enrollment form on our website
+        or contact us directly. Our team will get in touch with you to discuss
+        your goals and create a customized nutrition plan for you.
+      </p>
+    </div>
+  </div>
+
+  <div id="nutrition-guide" class="section">
+    <h2>Karthik Nutrition Guide</h2>
+    <div class="subsection">
+      <h3>About Karthik</h3>
+      <p>
+        Karthik is a renowned nutritionist with over 10 years of experience in
+        the field. He has helped numerous individuals achieve their health and
+        fitness goals through proper nutrition and lifestyle changes.
+      </p>
+    </div>
+    <div class="subsection">
+      <h3>Nutrition Tips</h3>
+      <p>
+        Karthik's nutrition guide provides valuable tips and advice on healthy
+        eating, meal planning, and maintaining a balanced diet. Follow his
+        recommendations to optimize your nutrition and enhance your well-being.
+      </p>
+    </div>
+  </div>
+
+  <div id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="subsection">
+      <h3>Client Testimonials</h3>
+      <p>
+        Hear from our satisfied clients who have successfully transformed their
+        lives through our nutrition program. Read their stories and discover
+        the positive impact that proper nutrition can have on your health and
+        overall quality of life.
+      </p>
+    </div>
+    <div class="subsection">
+      <h3>Share Your Feedback</h3>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" rows="4" required></textarea>
+        </div>
+        <input type="submit" value="Submit Feedback" />
+      </form>
+    </div>
+  </div>
+
+  <div class="gym-pictures">
+    <img src="C:\Users\jaika\Downloads\gym1.jpg" alt="Gym Picture 1">
+    <img src="C:\Users\jaika\Downloads\gym 2" alt="Gym Picture 2">
+    </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.getElementsByClassName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+      }
+      document.getElementById(sectionId).style.display = "block";
+    }
+
+    const feedbackForm = document.getElementById("feedback-form");
+    feedbackForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nameInput = document.getElementById("name");
+      const feedbackInput = document.getElementById("feedback");
+
+      const name = nameInput.value;
+      const feedback = feedbackInput.value;
+
+      // Perform actions with the submitted feedback
+      console.log("Name:", name);
+      console.log("Feedback:", feedback);
+
+      // Reset the form
+      feedbackForm.reset();
+    });
+  </script>
+</body>
+</html>
